@@ -1,0 +1,25 @@
+# Ant
+- task: AzureAppServiceManage@0
+  inputs:
+    azureSubscription: 'Azure para estudiantes: Starter (ae66fa86-2e67-452e-993f-83cd40bb2aea)'
+    Action: 'Swap Slots'
+    WebAppName: 'MiAppX'
+    ResourceGroupName: 'MiU'
+    SourceSlot: 'dm'
+
+trigger:
+- master
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+- task: Ant@1
+  inputs:
+    workingDirectory: ''
+    buildFile: 'build.xml'
+    javaHomeOption: 'JDKVersion'
+    jdkVersionOption: '1.8'
+    jdkArchitectureOption: 'x64'
+    publishJUnitResults: true
+    testResultsFiles: '**/TEST-*.xml'
