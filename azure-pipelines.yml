@@ -1,4 +1,9 @@
 # Ant
+- task: AzureAppServiceManage@0
+  inputs:
+    azureSubscription: 'Azure para estudiantes: Starter (ae66fa86-2e67-452e-993f-83cd40bb2aea)'
+    Action: 'Start Azure App Service'
+    WebAppName: 'MiAppX'
 # Build your Java projects and run tests with Apache Ant.
 # Add steps that save build artifacts and more:
 # https://docs.microsoft.com/azure/devops/pipelines/languages/java
